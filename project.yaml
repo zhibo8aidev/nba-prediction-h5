@@ -5,8 +5,10 @@ current_stage: proposal_specs
 stage_status: in_progress
 source_inputs:
   idea: 搭建一个 NBA 预测 H5 活动页，支持大小分竞猜、专家/AI 分组展示、登录提交、一次性参与与中奖通知流程。
-  existing_prd: []
-  existing_design: []
+  existing_prd:
+  - /home/chenhuiming/.openclaw/projects/nba-prediction-h5/artifacts/source-prd/prd.md
+  existing_design:
+  - /home/chenhuiming/.openclaw/projects/nba-prediction-h5/artifacts/source-design/design-spec.md
   existing_repo: []
 available_artifacts:
   proposal_md: false
@@ -28,8 +30,8 @@ repo_targets:
   client: /home/chenhuiming/.openclaw/projects/nba-prediction-h5
   backend: /home/chenhuiming/.openclaw/projects/nba-prediction-h5
 client_stack:
-  frontend: jetpack-compose
-  design_target: mobile-app
+  frontend: h5
+  design_target: mobile-web
 github:
   owner: zhibo8aidev
   repo: nba-prediction-h5
@@ -64,7 +66,7 @@ execution_policy:
     agent: codex
     method: acp_codex
     cwd: /home/chenhuiming/.openclaw/projects/nba-prediction-h5
-    stack: jetpack-compose
+    stack: h5
     follows:
     - proposal.md
     - specs/
