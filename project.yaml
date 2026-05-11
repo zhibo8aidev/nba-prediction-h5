@@ -9,6 +9,7 @@ source_inputs:
   - /home/chenhuiming/.openclaw/projects/nba-prediction-h5/artifacts/source-prd/prd.md
   existing_design:
   - /home/chenhuiming/.openclaw/projects/nba-prediction-h5/artifacts/source-design/design-spec.md
+  - /home/chenhuiming/.openclaw/projects/nba-prediction-h5/artifacts/source-design/chat-screenshot-notes-2026-05-11.md
   existing_repo: []
 available_artifacts:
   proposal_md: false
