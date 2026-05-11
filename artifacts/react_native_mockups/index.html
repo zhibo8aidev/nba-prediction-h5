@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>NBA预测 - 玩竞猜，送吧币</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 头部 KV -->
+        <div class="hero-kv">
+            <div class="back-btn">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </div>
+            <!-- 注意：实际环境中替换为 ../../artifacts/source-design/assets/hero-kv.jpg -->
+            <img src="../../artifacts/source-design/assets/hero-kv.jpg" alt="NBA竞猜预测" onerror="this.src='https://via.placeholder.com/390x219/3b82f6/ffffff?text=NBA+Prediction+Hero+KV'">
+        </div>
+
+        <!-- 对阵卡片 -->
+        <div class="card match-card">
+            <div class="match-time">竞猜截止：1月8日 07:00</div>
+            <div class="match-info">
+                <div class="team">
+                    <div class="team-icon">
+                        <img src="https://via.placeholder.com/48?text=LAL" alt="主队">
+                    </div>
+                    <div class="team-name">湖人</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team">
+                    <div class="team-icon">
+                        <img src="https://via.placeholder.com/48?text=GSW" alt="客队">
+                    </div>
+                    <div class="team-name">勇士</div>
+                </div>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-btn" onclick="selectOption(this, 'over')">总分高于 200.5 分</div>
+                <div class="option-btn" onclick="selectOption(this, 'under')">总分低于 200.5 分</div>
+            </div>
+
+            <button id="submitBtn" class="submit-btn" onclick="showIntentModal()">提交预测</button>
+        </div>
+
+        <!-- 专家分析卡片 (baseline + AI 组) -->
+        <div class="card analysis-card">
+            <div class="analysis-header">
+                <img src="https://via.placeholder.com/40?text=Expert" alt="专家" class="avatar">
+                <div class="role-info">
+                    <div class="role-name">磊哥看球 <span class="tag">近10中9</span></div>
+                </div>
+            </div>
+            <div class="analysis-content">
+                我偏好“大于200.5分”。这场比赛很可能会演变为一场对攻大战。进攻方面，两队都拥有能够撕开防线的得分点，可以持续压迫防守阵型并创造出手回合。防守方面，双方都缺乏顶级的防守资源，尤其在轮转换位和护框环节存在明显短板...
+            </div>
+            
+            <div class="ai-divider"></div>
+
+            <div class="ai-module">
+                <img src="https://via.placeholder.com/32?text=AI" alt="AI" class="ai-avatar">
+                <div class="ai-text">
+                    结合专家分析不难得出，两边的防守都不太行，想按住对方得分有点难。这比赛节奏只会被打超快，要演变成对攻战。
+                </div>
+            </div>
+        </div>
+
+        <!-- 活动规则 -->
+        <div class="card rules-card">
+            <div class="rules-title">活动规则</div>
+            <div class="rules-content">
+                <div class="rules-item">
+                    <p>1. 活动时间：2026年1月8日 - 1月15日</p>
+                </div>
+                <div class="rules-item">
+                    <p>2. 参与方式：每场比赛每个用户仅限参与一次竞猜，提交后无法更改。竞猜成功后可获得抽奖机会。</p>
+                </div>
+                <div class="rules-item">
+                    <p>3. 领奖须知：如您已获奖，我们会将获奖信息以短信形式和站内信形式发送给您，请在开奖后 7 个工作日内再次进入活动页面填写收货信息。</p>
+                </div>
+                <div class="rules-item">
+                    <p>4. 注意事项：Apple 未以任何形式参与和赞助本活动。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 意愿弹窗 -->
+    <div id="intentModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title">意愿确认</div>
+            <div class="modal-desc">您是否愿意在后续的竞猜活动中继续收到 磊哥看球 的专家分析？</div>
+            <div class="modal-btns">
+                <button class="modal-btn btn-cancel" onclick="closeModal('intentModal', false)">不愿意</button>
+                <button class="modal-btn btn-confirm" onclick="closeModal('intentModal', true)">愿意</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 成功弹窗 -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title">提交成功</div>
+            <div class="modal-desc">比赛结束后我们将在竞猜正确中进行抽奖，如中奖我们将通过短信和站内信进行告知。</div>
+            <div class="modal-btns">
+                <button class="modal-btn btn-single" onclick="finalizeSubmission()">知道了</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
