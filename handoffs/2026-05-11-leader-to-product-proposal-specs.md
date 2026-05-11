@@ -9,6 +9,9 @@
 ## Approved inputs
 - `artifacts/source-prd/prd.md`
 - `artifacts/source-design/design-spec.md`
+- `artifacts/source-design/chat-screenshot-notes-2026-05-11.md`
+- `artifacts/source-design/hero-kv.md`
+- `artifacts/source-design/assets/hero-kv.jpg`
 
 ## New artifacts expected
 - `artifacts/proposal.md`
